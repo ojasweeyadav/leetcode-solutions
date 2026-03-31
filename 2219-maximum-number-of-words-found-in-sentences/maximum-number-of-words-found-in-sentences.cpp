@@ -1,7 +1,6 @@
 class Solution {
 public:
     int mostWordsFound(vector<string>& sentences) {
-        int size=sentences.size();
         
         int max_c=0;
         for(string i : sentences){
