@@ -9,7 +9,7 @@ public:
                 small=abs(nums[i]);
                 j=nums[i];
             }
-            if(abs(nums[i])==small){
+            else if(abs(nums[i])==small){
                 small=abs(nums[i]);
                 j=max(j,nums[i]);
             }
@@ -17,3 +17,5 @@ public:
         return j;
     }
 };
+
+//else if can be used without else
