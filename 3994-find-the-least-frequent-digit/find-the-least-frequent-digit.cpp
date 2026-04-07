@@ -6,14 +6,14 @@ public:
         while(n>0){
             dig=n%10;
             n=n/10;
-            freq[dig]++;
+            freq[dig]++;   //freq[n%10]++;
         }
         int minf=INT_MAX;
-        int dig_min=INT_MAX;
+        int dig_min;
         for(int i=0;i<10;i++){
             if(freq[i]>0 && freq[i]<minf){
                 minf=freq[i];
-                dig_min=i;
+                dig_min=i;         //since we are iterating over freq so acts like sorted array
             }
             
         }
