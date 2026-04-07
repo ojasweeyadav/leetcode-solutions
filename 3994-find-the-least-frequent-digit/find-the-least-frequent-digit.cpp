@@ -11,6 +11,35 @@ public:
         int minf=INT_MAX;
         int dig_min=INT_MAX;
         for(int i=0;i<10;i++){
+            if(freq[i]>0 && freq[i]<minf){
+                minf=freq[i];
+                dig_min=i;
+            }
+            
+        }
+        return dig_min;
+    }
+};
+
+/*Time → O(d) (d = digits in n)
+Space → O(1) (array of size 10)*/
+
+
+/* 
+
+class Solution {
+public:
+    int getLeastFrequentDigit(int n) {
+        vector<int>freq(10);
+        int dig;
+        while(n>0){
+            dig=n%10;
+            n=n/10;
+            freq[dig]++;
+        }
+        int minf=INT_MAX;
+        int dig_min=INT_MAX;
+        for(int i=0;i<10;i++){
             
             if(freq[i]==0)continue;
             else{
@@ -27,3 +56,5 @@ public:
         return dig_min;
     }
 };
+
+A little bit complicated for multiple digits with same min freq*/
