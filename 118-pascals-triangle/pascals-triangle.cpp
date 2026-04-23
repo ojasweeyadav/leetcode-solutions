@@ -2,6 +2,28 @@ class Solution {
 public:
     vector<vector<int>> generate(int numRows) {
         int n=numRows;
+        vector<vector<int>>dp;
+        
+        for(int i=0;i<n;i++){
+            vector<int>row(i+1,1);  //Row i → only (i + 1) elements //KEPT ALL ELEMENTS AS 1
+            for(int j=1;j<i;j++){
+                row[j]=dp[i-1][j-1]+dp[i-1][j];
+            }
+            dp.push_back(row);
+        }
+        return dp;
+    }
+};
+
+//by the for loop conditions - it is clear that we are calculationg for mid elements - diagonal elements
+//are already set as 1
+
+
+/* NOT OPTIMAL - SPACE IS WASTED
+class Solution {
+public:
+    vector<vector<int>> generate(int numRows) {
+        int n=numRows;
         vector<vector<int>>dp(n,vector<int>(n));
         dp[0][0]=1;
 
@@ -25,7 +47,7 @@ public:
         }
         return ans;
         //this was using inner while
-        /*
+        //
         for(int i=0;i<n;i++){
             vector<int>row;
             int j=0;
@@ -36,6 +58,7 @@ public:
             ans.push_back(row);
         }
         return ans;
-        */
+        //
     }
 };
+*/
