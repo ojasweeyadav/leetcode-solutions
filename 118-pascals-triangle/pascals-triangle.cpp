@@ -15,6 +15,17 @@ public:
             }
         }
         vector<vector<int>>ans;
+        //using inner for
+        for(int i=0;i<n;i++){
+            vector<int>row;
+            for(int j=0;j<=i;j++){
+                row.push_back(dp[i][j]);
+            }
+            ans.push_back(row);
+        }
+        return ans;
+        //this was using inner while
+        /*
         for(int i=0;i<n;i++){
             vector<int>row;
             int j=0;
@@ -25,5 +36,6 @@ public:
             ans.push_back(row);
         }
         return ans;
+        */
     }
 };
