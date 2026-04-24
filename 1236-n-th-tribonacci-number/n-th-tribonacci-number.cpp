@@ -1,23 +1,24 @@
 class Solution {
 public:
-//Bottom up(tabulation)
-    int tribonacci(int n) {
-        if(n==0)return 0;//T_0=0
-        if(n==1 || n==2) return 1; //T_1 = T_2 = 1
+//Top- down (memoization)
+    int solve(vector<int>&dp , int n){
+        if(n==0) return 0;
+        if(n==1 || n==2) return 1;
 
-        vector<int>dp(n+1);
-        dp[0]=0;
-        dp[1]=1;
-        dp[2]=1;
-        for(int i=3;i<=n;i++){
-            dp[i]=dp[i-3]+dp[i-2]+dp[i-1];
-        }
-        return dp[n];
+        if(dp[n]!=-1)return dp[n];
+        return dp[n]=solve(dp,n-1)+solve(dp,n-2)+solve(dp,n-3);
+    }
+    int tribonacci(int n) {
+        vector<int>dp(n+1,-1);
+        return solve(dp,n);
     }
 };
 
 //both if handles base cases
 
-// Time & Space
-// Time: O(n) ✔ optimal
-// Space: O(n) ✔ 
+/* Time & Space
+ Time: O(n) ✔ optimal
+ Space: O(n) ✔ */
+
+//see Note
+
