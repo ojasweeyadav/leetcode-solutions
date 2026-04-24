@@ -4,6 +4,7 @@ public:
     int tribonacci(int n) {
         if(n==0)return 0;//T_0=0
         if(n==1 || n==2) return 1; //T_1 = T_2 = 1
+
         vector<int>dp(n+1);
         dp[0]=0;
         dp[1]=1;
@@ -14,3 +15,9 @@ public:
         return dp[n];
     }
 };
+
+//both if handles base cases
+
+// Time & Space
+// Time: O(n) ✔ optimal
+// Space: O(n) ✔ 
