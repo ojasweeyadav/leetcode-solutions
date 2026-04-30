@@ -21,6 +21,7 @@ public:
     }
 };
 
+//see Note
 /*
 Choose the operation that creates more trailing zeros in binary
 Because: more zeros → more /2 → fewer steps
