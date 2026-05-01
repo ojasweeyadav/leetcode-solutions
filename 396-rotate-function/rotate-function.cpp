@@ -1,5 +1,31 @@
 class Solution {
 public:
+//using O(1) : SC
+    int maxRotateFunction(vector<int>& nums) {
+        int n = nums.size();
+        int f = 0, total = 0;
+
+        for (int i = 0; i < n; i++) {
+            total += nums[i];
+            f += i * nums[i];
+        }
+
+        int ans = f;
+
+        for (int i = n - 1; i > 0; i--) {
+            f = f + total - n * nums[i];
+            ans = max(ans, f);
+        }
+
+        return ans;
+    }
+};
+
+
+/* USING SC:O(n)
+
+class Solution {
+public:
     int maxRotateFunction(vector<int>& nums) {
         int n=nums.size();
         int j=0;
@@ -17,3 +43,4 @@ public:
         return *max_element(fx.begin(),fx.end());
     }
 };
+*/
