@@ -1,10 +1,11 @@
 class Solution {
 public:
+//String matching using KMP(Knuth - Morris - Patt)
     vector<int> buildLPS(string pattern) {
         int n = pattern.size();
         vector<int> lps(n, 0);
 
-        int len = 0;
+        int len = 0;   //len = length of pattern matched so far
         for (int i = 1; i < n; ) {
             if (pattern[i] == pattern[len]) {
                 lps[i++] = ++len;
@@ -41,6 +42,13 @@ public:
         return false;
     }
 };
+
+/*
+Why lps[j-1]?
+Because:
+j-1 is last matched index
+lps[j-1] = longest prefix = suffix for that part
+*/
 
 /*
 class Solution {
