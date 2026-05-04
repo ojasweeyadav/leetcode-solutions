@@ -42,7 +42,7 @@ public:
         return false;
     }
 };
-
+//
 /*
 Why lps[j-1]?
 Because:
