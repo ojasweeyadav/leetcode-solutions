@@ -2,18 +2,15 @@ class Solution {
 public:
 
     int robLinear(vector<int>& nums, int start, int end){
-        int prev2 = 0; // dp[i-2]
-        int prev1 = 0; // dp[i-1]
-        
-        for(int i=start; i<=end; i++){
-            int take = nums[i] + prev2;
-            int skip = prev1;
-            int curr = max(take, skip);
-            
-            prev2 = prev1;
-            prev1 = curr;
+        int len=end-start+1;
+        if(len == 1) return nums[start]; //edge case
+        vector<int>dp(len);
+        dp[0]=nums[start];
+        dp[1]=max(nums[start],nums[start+1]);
+        for(int i=2;i<len;i++){
+            dp[i]=max(dp[i-2]+nums[start+i],dp[i-1]);
         }
-        return prev1;
+        return dp[len-1];
     }
 
     int rob(vector<int>& nums) {
