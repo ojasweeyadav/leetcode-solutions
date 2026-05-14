@@ -1,3 +1,4 @@
+//TARJAN'S ALGORITHM (TO FIND BRIDGES)
 //node = u and it=v
 class Solution {
 public:
@@ -34,11 +35,11 @@ public:
         vector<int>low(n,0);
         vector<vector<int>>bridges;
         
-        for(int i=0;i<n;i++){
-            if(!vis[i]){
-                dfs(i,-1,vis,adj,tin,low,bridges);
-            }
-        }
+        // for(int i=0;i<n;i++){
+        //     if(!vis[i]){
+                 dfs(0,-1,vis,adj,tin,low,bridges);
+        //     }
+        // }
         return bridges;
     }
 };
