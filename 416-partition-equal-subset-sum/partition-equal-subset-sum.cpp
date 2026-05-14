@@ -1,25 +1,3 @@
-// class Solution {
-// public:
-//     bool canPartition(vector<int>& nums) {
-//         int n=nums.size();
-//         int sum=0;
-//         for(int i:nums){
-//             sum+=i;
-//         }
-//         if(sum%2!=0)return false;
-//         int target=sum/2;
-//         vector<vector<bool>>dp(n,vector<bool>(target+1));
-//         //dp[i]=including this eelement will get us target sum or not
-
-//         dp[]
-
-//         for(int i=0;i<n;i++){
-//             for(int j=0;j<=target;j++){
-
-//             }
-//         }
-//     }
-// };
 class Solution {
 public:
     bool canPartition(vector<int>& nums) {
@@ -56,7 +34,7 @@ public:
                     take = dp[i-1][j - nums[i]];
                 }
 
-                dp[i][j] = take || notTake;
+                dp[i][j] = take || notTake;  //any valid way can be chosen
             }
         }
 
