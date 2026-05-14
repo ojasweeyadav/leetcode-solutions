@@ -49,4 +49,4 @@ If one subset reaches target sum/2,
 the remaining elements automatically form the other subset.
 
 So the problem simplifies to:
-Can I pick some elements whose sum becomes target?*/
+Can I pick some elements whose sum becomes target? */
