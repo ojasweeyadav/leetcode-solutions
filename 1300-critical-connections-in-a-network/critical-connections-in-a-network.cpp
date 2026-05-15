@@ -19,7 +19,7 @@ public:
                 low[node]=min(low[node],low[it]);
 
                 if(low[it]>tin[node]){
-                    bridges.push_back({node,it});
+                    bridges.push_back({node,it});  //same as {it,node}
                 }
             }
         }
@@ -35,11 +35,14 @@ public:
         vector<int>low(n,0);
         vector<vector<int>>bridges;
         
-        // for(int i=0;i<n;i++){
-        //     if(!vis[i]){
-                 dfs(0,-1,vis,adj,tin,low,bridges);
-        //     }
-        // }
+        for(int i=0;i<n;i++){
+            if(!vis[i]){
+                dfs(i,-1,vis,adj,tin,low,bridges);  //only: dfs(0,-1,vis,adj,tin,low,bridges); without for-loop also works
+            }
+        }
         return bridges;
     }
 };
+//
+
+//but adding for loop help to cover when there maybe another non connected component - to be on the safer side
