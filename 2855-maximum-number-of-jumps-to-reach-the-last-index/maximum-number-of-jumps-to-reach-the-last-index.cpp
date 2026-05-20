@@ -17,3 +17,12 @@ public:
         return dp[n-1];
     }
 };
+//
+/*
+dp[j] + 1: Reach index j in dp[j] jumps, then take 1 more jump to reach i.
+We compare with dp[i] because multiple previous indices j may be able to reach i.
+
+So: dp[i] stores the maximum jumps among all possible ways to reach index i.
+
+Hence: dp[i] = max(dp[i], dp[j] + 1)
+*/
