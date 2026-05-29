@@ -1,6 +1,6 @@
 class Solution {
 public:
-
+//without extra ans array
     int digsum(int n){
         int dig;
         int sum=0;
