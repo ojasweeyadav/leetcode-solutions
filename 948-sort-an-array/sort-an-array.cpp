@@ -29,7 +29,7 @@ public:
     
     void mS(vector<int>&nums, int low, int high){
         if(low>=high)return;
-        int mid=(low+high)/2;
+        int mid = low + (high - low) / 2;
         mS(nums,low,mid);
         mS(nums,mid+1,high);
         merge(nums,low,mid,high);
@@ -39,3 +39,8 @@ public:
         return nums;    
     }
 };
+/*
+Complexity
+Time: O(n log n)
+Space: O(n) (because of temp)
+*/
